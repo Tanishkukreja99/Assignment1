@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<style>* {padding: 0; margin: 0; }
+body{
+    background: rgb(253, 243, 208);
+}
+.flex-container  {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+      background: rgb(253, 243, 208);
+}
+
+.logo {
+  margin: 0 0 0 .45em;
+  
+}
+    .logo a {
+      color: rgb(28, 24, 22);
+    }
+
+    .logo, .navigation {
+        list-style: none;
+        text-transform: uppercase;
+      
+    }
+
+    .logo a, .navigation a {
+        text-decoration: none;
+        letter-spacing: .45rem;
+      
+    }
+
+.navigation  {
+  display: flex;
+}
+
+.navigation a {
+  display: block;
+  padding: 1em;
+  color: rgb(0, 0, 0);
+}
+
+.navigation a:hover {
+    background: #c5b8ff;
+}
+
+
+@media all and (max-width: 990px) {
+  .flex-container {
+    flex-direction: column;
+  }
+  
+  .logo {
+  margin: 0;
+}
+  
+  .navigation  {
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+
+@media all and (max-width: 600px) {
+ 
+  .logo {
+    margin: .25em 0;
+    align-self: left; 
+}
+  
+  .navigation {
+    flex-direction: column;
+  }
+  
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+     
+  }
+  
+  
+}
+
+.bgImage{
+    width: 100%;
+    height: 100vh;
+}
+
+
+
+.flipCardContainer{
+    display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  #avtarImg{
+    width: 100%;
+    height: 300px;
+}
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+#fcb1{
+    background-color: #ec790e;
+    color: white;
+    transform: rotateY(180deg);
+}
+#fcb2{
+    background-color: #3b9e3b;
+    color: white;
+    transform: rotateY(180deg);
+}
+#fcb3{
+    background: rgb(255, 247, 216);
+    color: black;
+    transform: rotateY(180deg);
+}
+#fcb4{
+    background-color: #3b9e3b;
+    color: white;
+    transform: rotateY(180deg);
+}
+footer {
+    text-align: center;
+    padding: 5px;
+    background: rgb(253, 243, 208);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 800;
+  }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Assignment 2</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="flex-container">
+       
+        <ul class="navigation">
+          <li><a href="#">Home</a></li>
+          <li><a href="#bgContainer">Cover IMG</a></li>
+          <li><a href="#flipCardContainer">Cards</a></li>
+          <li><a href="#footerContainer">footer</a></li>
+        </ul>
+      </div>
+
+
+      <!-- Image -->
+
+      <div class="bgContainer" id="bgContainer">
+      <img src="https://images.unsplash.com/photo-1490077476659-095159692ab5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1033&q=80" alt="Background Cover Image" class="bgImage">
+      </div>
+
+
+
+      <!-- Flip Card -->
+      <div class="flipCardContainer" id="flipCardContainer">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1548661710-7f540c9c56d6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back" id="fcb1">
+            <h1>Sea level</h1> 
+           
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1500111709600-7761aa8216c7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back"  id="fcb2">
+            <h1>Bridge</h1> 
+        
+          </div>
+        </div>
+      </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1576504164753-8fd338cd450b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1027&q=80" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back"  id="fcb3">
+            <h1>Village</h1> 
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://images.unsplash.com/photo-1523295616404-2b6c098f26dd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1450&q=80" alt="Avatar" id="avtarImg">
+          </div>
+          <div class="flip-card-back"  id="fcb4">
+            <h1>Mountain</h1> 
+           
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Footer -->
+    <div class="footerContainer" id="footerContainer">
+        <footer>
+            <p>This website is made by Tanish</p>
+          </footer>
+
+    </div>
+    
+</body>
+</html>
